@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ethereum Lotto!</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Ethereum Lotto</h1>
+  <h2>The Blockchain Lotto</h2>
+
+  <br><br>
+  <h2>~ Round Info ~</h2>
+  <br>
+  <b>Current Round: <label id="roundLabel"></label></b>
+  <br>
+  <b>Ticket Price: <label id="priceLabel"></label></b>
+  <br>
+  <b>Round State: <label id="stateLabel"></label></b>
+  <br>
+  <button id="refreshInfo" onclick="App.updateRoundInfo()">Refresh Round Info</button>
+  <br><br>
+  <br><h2>~ Buy Tickets ~</h2>
+  <br><label for="ticketNums" style="width:110px">My Numbers:</label><input type="text" id="ticketNums" placeholder="(0000 ~ 9999)" style="width:110px"></input>
+  <button id="buyTicket" onclick="App.buyTicket()">Buy Ticket!</button>
+  <br><br><button id="buyQuickPick" onclick="App.buyQuickPick()">I'm lazy, pick my numbers for me instead!</button>
+  <br><br>
+  <br><h2>~ Lotto Service Stuff ~</h2>
+  <br><button id="genNumbersReal" onclick="App.closeRound()">Generate Numbers With Oraclize</button>
+  <br><label for="winningNums" style="width:170px">Winning Numbers:</label><input type="text" id="winningNums" placeholder="(0000 ~ 9999)" style="width:110px"></input>
+  <button id="closeDebug" onclick="App.closeRoundDebug()">Set Winning Nums Debug</button>
+  <br><button id="finalizeRound" onclick="App.finalizeRound()">Finalize Round</button>
+  <br><br>
+  <br><h2>~ Lookup Round Info ~</h2>
+  <br><label for="roundLookup" style="width:150px">Get Round Info:</label><input type="text" id="roundLookup" placeholder="Round Number" style="width:110px"></input>
+  <br><button id="lookupRound" onclick="App.getRoundInfo()">Lookup Round Info</button>
+  <br><label id="roundInfo" style="width:500px"></label>
+  <br><br>
+  <br><h2>~ Last Status Message ~</h2>
+  <span id="status"></span>
+  <br>
+  <span class="hint"><strong>Hint:</strong> open the browser developer console to view full status logs.</span>
+</body>
+</html>
